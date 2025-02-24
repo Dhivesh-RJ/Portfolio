@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Dhivesh RJ</title>
+    <link rel="icon" href="C:\Users\dhive\Desktop\HTML Project/PP.jpg.webp">
+
+    <!-- Google Fonts: Merriweather -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Background with RCB 2013 Colors */
+        body {
+            background: linear-gradient(120deg, #002E6E, #DA291C, #FFD700);
+            color: white;
+            font-family: 'Merriweather', serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Glowing Animated Heading */
+        .glow-text {
+            font-size: 40px;
+            color: gold;
+            text-shadow: 0 0 10px red, 0 0 20px blue, 0 0 30px gold;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 15px red, 0 0 25px blue, 0 0 35px gold; }
+            100% { text-shadow: 0 0 25px yellow, 0 0 35px white, 0 0 45px red; }
+        }
+
+        /* Profile Card with 3D Effect */
+        .profile-card {
+            width: 270px;
+            background: rgba(255, 215, 0, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+            transform: perspective(800px) rotateY(0deg);
+            transition: transform 0.5s;
+            display: inline-block;
+            margin: 20px auto;
+        }
+
+        .profile-card:hover {
+            transform: perspective(800px) rotateY(10deg) scale(1.05);
+        }
+
+        /* Image Styling */
+        .profile-img {
+            width: 200px;
+            border-radius: 10px;
+            border: 5px solid gold;
+            transition: transform 0.5s;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Stylish Buttons */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            color: white;
+            background: linear-gradient(45deg, #DA291C, #FFD700);
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px gold;
+        }
+
+        /* Contact Section */
+        .contact {
+            font-size: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
+            color: gold;
+        }
+
+        /* Experience Table */
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid white;
+            text-align: center;
+        }
+
+        th {
+            background: gold;
+            color: black;
+        }
+
+        /* Description Sections */
+        .description {
+            display: none;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 60%;
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .profile-card {
+                width: 90%;
+            }
+            .profile-img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="glow-text">Welcome to My Portfolio</h1>
+
+    <div class="profile-card">
+        <img src="C:\Users\dhive\Desktop\HTML Project/PP.jpg.webp" alt="Profile Picture" class="profile-img">
+        <h2 style="color: gold;">Dhivesh RJ</h2>
+        <p style="color: blue;">Team Lead || Mentor || Passionate About Tech & Data || KPI & QA Data Analysis || Excel & MS Office Expert</p>
+        <a href="https://www.linkedin.com/in/dhiveshrj/" class="button">LinkedIn</a>
+        <a href="Dhivesh. RJ Resume (2).pdf" class="button">Resume</a>
+    </div>
+
+    <div class="contact">
+        <h2>Contact Me</h2>
+        <p>📞 <span style="color: red;">+91 9750108977</span></p>
+        <p>📧 <span style="color: blue;">dhivesh.rj@gmail.com</span></p>
+    </div>
+
+    <h2 style="color: gold;">Experience</h2>
+    <table>
+        <tr>
+            <th>Company</th>
+            <th>Designation</th>
+            <th>Year</th>
+            <th>Location</th>
+        </tr>
+        <tr>
+            <td>Focus Edumatics</td>
+            <td><button class="button" onclick="showDescription('teamLead')">Team Lead</button></td>
+            <td>2022-2025</td>
+            <td>Coimbatore</td>
+        </tr>
+        <tr>
+            <td>Focus Edumatics</td>
+            <td><button class="button" onclick="showDescription('onlineTutor')">Online Tutor</button></td>
+            <td>2018-2021</td>
+            <td>Coimbatore</td>
+        </tr>
+        <tr>
+            <td>Vedantu</td>
+            <td><button class="button" onclick="showDescription('academicMentor')">Academic Mentor</button></td>
+            <td>2025</td>
+            <td>Coimbatore</td>
+        </tr>
+    </table>
+    
+    <div id="teamLead" class="description">
+        <h3>Team Lead</h3>
+        <p>As a Team Lead, I drive performance, mentor teams, and ensure excellence in KPI and QA by implementing structured processes.</p>
+        <p><strong>Skills:</strong> Team Leadership, KPI Management, Quality Assurance, Process Optimization, IT Support.</p>
+    </div>
+    <div id="onlineTutor" class="description">
+        <h3>Online Tutor</h3>
+        <p>I mentored K-12 students, designed interactive lessons, and tracked student progress.</p>
+        <p><strong>Skills:</strong> Teaching, Student Engagement, Curriculum Design, Communication.</p>
+    </div>
+    <div id="academicMentor" class="description">
+        <h3>Academic Mentor</h3>
+        <p>At Vedantu, I provided academic guidance, mentoring students for success in their studies.</p>
+        <p><strong>Skills:</strong> Mentoring, Educational Support, Performance Tracking.</p>
+    </div>
+    
+    <script>
+        function showDescription(id) {
+            // Hide all descriptions
+            document.querySelectorAll('.description').forEach(desc => desc.style.display = 'none');
+
+            // Show the selected description
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
