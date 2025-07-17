@@ -226,8 +226,14 @@
 
   <script>
     function showDescription(id) {
-      document.querySelectorAll('.description').forEach(desc => desc.style.display = 'none');
-      document.getElementById(id).style.display = 'block';
+      document.querySelectorAll('.description').forEach(desc => {
+        desc.style.display = 'none';
+      });
+      const target = document.getElementById(id);
+      if (target) {
+        target.style.display = 'block';
+        target.scrollIntoView({ behavior: "smooth" });
+      }
     }
   </script>
 
